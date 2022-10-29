@@ -1,6 +1,6 @@
 {
     "deploy": {
-        "appIsGoPath": false,
-        "main": "."
+        "appIsGoPath": true,
+        "main": "myapp"
     }
 }
