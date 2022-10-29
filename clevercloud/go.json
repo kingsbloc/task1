@@ -1,6 +1,7 @@
 {
     "deploy": {
         "appIsGoPath": true,
-        "main": "myapp"
+        "main": "myapp",
+        "execDir": "src/myapp"
     }
 }
