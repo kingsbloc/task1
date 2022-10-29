@@ -35,7 +35,7 @@ func main() {
 	mux := http.NewServeMux()
 	mux.HandleFunc("/", bio)
 
-	err := http.ListenAndServe(":3333", mux)
+	err := http.ListenAndServe(":8080", mux)
 
 	if errors.Is(err, http.ErrServerClosed) {
 		fmt.Printf("Server closed\n")
