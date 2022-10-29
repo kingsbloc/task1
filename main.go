@@ -4,6 +4,7 @@ import (
 	"encoding/json"
 	"errors"
 	"fmt"
+	"log"
 	"net/http"
 	"os"
 )
@@ -32,10 +33,15 @@ func bio(w http.ResponseWriter, r *http.Request) {
 }
 
 func main() {
+	port := os.Getenv("PORT")
+
+	if port == "" {
+		log.Fatal("$PORT must be set")
+	}
 	mux := http.NewServeMux()
 	mux.HandleFunc("/", bio)
 
-	err := http.ListenAndServe(":8080", mux)
+	err := http.ListenAndServe(":"+port, mux)
 
 	if errors.Is(err, http.ErrServerClosed) {
 		fmt.Printf("Server closed\n")
